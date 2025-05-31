@@ -1,7 +1,6 @@
 {
-  "name": "fatecis-prototipo",
+  "name": "fatecis",
   "version": "1.0.0",
-  "description": "Protótipo da plataforma FATECIS",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

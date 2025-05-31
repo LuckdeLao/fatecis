@@ -1,10 +1,11 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Configuração do multer para uploads
+// Configuração do multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'public/uploads');
@@ -32,7 +33,6 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });
 
 app.get('/arquivos', (req, res) => {
-  const fs = require('fs');
   const dirPath = path.join(__dirname, 'public/uploads');
   fs.readdir(dirPath, (err, files) => {
     if (err) return res.send('Erro ao listar arquivos');
